@@ -68,6 +68,9 @@ public class ServerTCP implements Runnable{
                         case "logout" -> {
                             logout(line);
                         }
+                        case "viewchathistory" -> {
+                            sendChatHistory();
+                        }
                     }
                 } catch(IndexOutOfBoundsException ex) {
                     out.write("Sai cú pháp");
@@ -225,7 +228,7 @@ public class ServerTCP implements Runnable{
         String curTime = FormatDate.getCurrent(FormatDate.STANDARD_TIME);
         sendData("chat_item_status;"+chatContent+";success;"+curTime);
         friendMatch.sendData("received_chat;"+name+";"+curTime+";"+chatContent);
-        historyChat.add(curTime+" You sent to "+friendMatch+": "+friendMatch);
+        historyChat.add("["+curTime+"] You sent to "+friendMatch.name+": "+chatContent);
     }
     
     private void logout(String line)
@@ -273,11 +276,29 @@ public class ServerTCP implements Runnable{
     /* Unpair friend */
     public void unpair()
     {
-        friendMatch = null;
+        friendMatch = new ServerTCP();
     }
     
     public String getName(){
         return name;
     }
-    
+
+    private void sendChatHistory() throws IOException{
+        if(!historyChat.isEmpty()){
+            String chatHistory = "";
+            for(int i=0;i<historyChat.size();i++)
+            {
+                chatHistory += historyChat.get(i);
+                if(i < historyChat.size()-1)
+                {
+                    chatHistory += ",";
+                }
+            }
+            sendData("result_chat_history"+";success;"+chatHistory);            
+        }
+        else{
+            sendData("result_chat_history"+";not_found_history");
+        }
+    }
+ 
 }

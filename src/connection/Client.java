@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class Client {
@@ -86,6 +87,9 @@ public class Client {
                     }
                     case "logout" -> {
                         receiveLogout(line);
+                    }
+                    case "result_chat_history" -> {
+                        receivedChatHistory(line);
                     }
                 }
             }
@@ -292,7 +296,7 @@ public class Client {
     
     public void viewChatHistory()
     {
-        
+        sendMessage("viewchathistory");
     }
     
     public void sendChat(String chatContent)
@@ -302,5 +306,22 @@ public class Client {
     
     public String getNickname(){
         return nickname;
+    }
+
+    private void receivedChatHistory(String line) {
+        String[] splittedLine = line.split(";");
+        RunClient.openForm(RunClient.Form.CHATHISTORY);
+        RunClient.chatHistory.setLocationRelativeTo(RunClient.main);
+        if(splittedLine[1].equals("not_found_history"))
+        {
+            RunClient.chatHistory.addChatHistoryItem("Không tìm thấy lịch sử chat nào gần đây");
+        }
+        else {
+            StringTokenizer tokenizer = new StringTokenizer(splittedLine[2],",",false);
+            while(tokenizer.hasMoreTokens())
+            {
+                RunClient.chatHistory.addChatHistoryItem(tokenizer.nextToken());
+            }
+        }
     }
 }

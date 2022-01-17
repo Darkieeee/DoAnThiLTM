@@ -65,7 +65,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sảnh ghép đôi");
+        setTitle("Giao diện chính");
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridLayout());
 

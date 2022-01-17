@@ -8,11 +8,13 @@ public class RunClient {
     public static Login loginForm;
     public static Main main;
     public static ChatBox chatBox;
+    public static ChatHistory chatHistory;
     private static int curForm;
     public enum Form {
         LOGIN,
         MAIN,
-        CHATBOX
+        CHATBOX,
+        CHATHISTORY
     }
     public RunClient() {
         client = new Client();
@@ -49,6 +51,11 @@ public class RunClient {
                 chatBox.setVisible(true);
                 curForm = 3;
             }
+            case CHATHISTORY -> {
+                chatHistory = new ChatHistory();
+                chatHistory.setVisible(true);
+                curForm = 4;
+            }
         }
     }
     public static void closeForm (Form form)
@@ -66,6 +73,9 @@ public class RunClient {
             }
             case CHATBOX -> {
                 chatBox.dispose();
+            }
+            case CHATHISTORY -> {
+                chatHistory.dispose();
             }
         }
     }

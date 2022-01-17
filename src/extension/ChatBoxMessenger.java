@@ -57,29 +57,6 @@ public class ChatBoxMessenger extends javax.swing.JPanel{
         frame.pack();
         frame.setLocationRelativeTo(null);
         ChatBoxMessenger cbm = new ChatBoxMessenger();
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.RIGHT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.RIGHT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
-        cbm.addChat("Forgusion","Hello các bợn Hello các bợn Hello các bợn Hello các bợn"
-                + "             Hello các bợn Hello các bợn Hello các bợn Hello các bợn"
-                + "Hello các bợn Hello các bợn Hello các bợn Hello các bợn"
-                + "Hello các bợn Hello các bợn Hello các bợn Hello các bợn"
-                + "Hello các bợn Hello các bợn Hello các bợn Hello các bợn"
-                + "Hello các bợn Hello các bợn Hello các bợn Hello các bợn"
-                + "Hello các bợn Hello các bợn Hello các bợn Hello các bợn", ChatBoxMessenger.LEFT_MESSAGE);
         frame.add(cbm,java.awt.BorderLayout.CENTER);
         frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);

@@ -30,7 +30,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="S&#x1ea3;nh gh&#xe9;p &#x111;&#xf4;i"/>
+    <Property name="title" type="java.lang.String" value="Giao di&#x1ec7;n ch&#xed;nh"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
